@@ -23,7 +23,7 @@ sed -i "s/password_here/$DB_PASSWORD/" wp-config.php
 sed -i "s/localhost/${db_endpoint}/" wp-config.php
 
 EFS_ID="${efs_id}"
-REGION="eu-central-1"
+REGION="${REGION}"
 MOUNT_POINT="/var/www/html/wp-content"
 mkdir -p $MOUNT_POINT
 
