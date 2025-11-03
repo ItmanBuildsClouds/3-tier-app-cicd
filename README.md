@@ -1,6 +1,6 @@
 # 3-Tier WordPress on AWS: Scalable, Secure & Fully IaC
 
-**`tierapp` – production-grade, 3-tier WordPress architecture on AWS**, built **100% with Terraform**.
+3-tier WordPress architecture on AWS**, built **100% with Terraform**.
 
 This project demonstrates **real-world DevOps & Cloud Engineering**:
 - High availability across 3 AZs
