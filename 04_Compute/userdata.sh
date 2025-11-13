@@ -35,5 +35,6 @@ setsebool -P httpd_can_network_connect_db 1
 
 chown -R apache:apache /var/www/html
 chmod -R 755 /var/www/html
+chmod -R 775 /var/www/html/wp-content
 
 systemctl restart httpd
