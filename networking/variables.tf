@@ -31,19 +31,11 @@ variable "nat_gateway" {
   type    = bool
   default = true
 }
-variable "db_username" {
+variable "owner_name" {
   type    = string
-  default = "apptier"
+  default = "Piotr"
 }
-variable "ami_id" {
+variable "environment_name" {
   type    = string
-  default = "ami-099981549d4358e9a"
-}
-variable "instance_type" {
-  type    = string
-  default = "t3.micro"
-}
-variable "key_name" {
-  type    = string
-  default = "DemoKeyPair"
+  default = "local"
 }
