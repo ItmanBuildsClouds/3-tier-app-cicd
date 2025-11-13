@@ -12,6 +12,7 @@ module "rds" {
   allocated_storage           = 60
   skip_final_snapshot         = var.skip_final_snapshot
   manage_master_user_password = var.manage_master_user_password
+  multi_az = true
 
   username = data.aws_ssm_parameter.db_username.value
   password = data.aws_ssm_parameter.db_password.value
