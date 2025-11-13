@@ -13,6 +13,11 @@ EFS_ID="${efs_id}"
 REGION="${region}"
 MOUNT_POINT="/var/www/html/wp-content"
 
+mkdir -p $MOUNT_POINT
+
+echo "$EFS_ID.efs.$REGION.amazonaws.com:/ $MOUNT_POINT nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 0 0" >> /etc/fstab
+mount -a -t nfs4
+
 cd /var/www/html
 wget https://wordpress.org/latest.tar.gz
 tar -xzf latest.tar.gz
@@ -26,10 +31,6 @@ sed -i "s/username_here/$DB_USER/" wp-config.php
 sed -i "s/password_here/$DB_PASSWORD/" wp-config.php
 sed -i "s/localhost/$DB_ENDPOINT/" wp-config.php
 
-mkdir -p $MOUNT_POINT
-
-echo "$EFS_ID.efs.$REGION.amazonaws.com:/ $MOUNT_POINT nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 0 0" >> /etc/fstab
-mount -a -t nfs4
 
 setsebool -P httpd_can_network_connect_db 1
 
