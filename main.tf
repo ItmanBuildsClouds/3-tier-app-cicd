@@ -1,10 +1,3 @@
-resource "random_string" "random_suffix" {
-  length  = 5
-  special = false
-  upper   = false
-}
-
-
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "6.5.0"
